@@ -1,2 +1,2 @@
 /*
-  Content-Security-Policy: default-src 'self' data: 'unsafe-inline';
+  Content-Security-Policy: default-src 'self' data: blob: 'unsafe-inline';
