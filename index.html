@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title id="title">URL Shortener</title>
+		
+		<link href="https://vjs.zencdn.net/7.19.2/video-js.css" rel="stylesheet" />
+		<link rel="stylesheet" href="style.css">
+		
+		<script src="client.js" defer></script>
+	</head>
+	<body>
+		<div id="content" class="centered">
+			<h1>Redirecting you to your destination</h1>
+			<p>If you are not redirected, please <a href="javascript:void(0)">click here</a> to continue.</p>
+		</div>
+		<div id="rickroll-container" style="display: none;">
+			<video id="rickroll-player" poster="/assets/BlackBG.png" crossorigin="anonymous" preload="auto" data-setup="{}">
+				<source src="/assets/Rickroll/master.m3u8">
+			</video>
+			<script src="https://vjs.zencdn.net/7.19.2/video.min.js"></script>
+		</div>
+	</body>
+</html>

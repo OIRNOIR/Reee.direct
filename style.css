@@ -1,0 +1,18 @@
+body {
+	margin: 0;
+	padding: 0;
+	font-family: arial, helvetica, sans-serif;
+}
+
+#rickroll-player_html5_api {
+	width: 100vw;
+	height: 100vh;
+}
+
+.centered {
+  text-align: center;
+}
+
+.blackbg {
+	background-color: #000000;
+}
