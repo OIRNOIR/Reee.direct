@@ -4,7 +4,7 @@ body {
 	font-family: arial, helvetica, sans-serif;
 }
 
-#rickroll-player_html5_api {
+#stream-player_html5_api {
 	width: 100vw;
 	height: 100vh;
 }
@@ -17,6 +17,6 @@ body {
 	background-color: #000000;
 }
 
-#rickroll-container {
+#stream-container {
 	display: none;
 }
