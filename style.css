@@ -16,3 +16,7 @@ body {
 .blackbg {
 	background-color: #000000;
 }
+
+#rickroll-container {
+	display: none;
+}
