@@ -1,2 +1,2 @@
 /*
-  Content-Security-Policy: default-src 'self' data: blob: 'unsafe-inline'; style-src-attr 'sha256-pILX+5FGCpLRHvNBgtABIdSMmytrYudGxJBUYXY1t0s=' 'unsafe-hashes';
+  Content-Security-Policy: default-src 'self' data: blob: 'unsafe-inline';
