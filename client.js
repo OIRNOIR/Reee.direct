@@ -8,7 +8,7 @@ window.addEventListener('click', () => {
 	try {
 		document.getElementById("ol").style.display = "initial";
 	} catch {
-		
+
 	}
 	document.body.classList.add("blackbg");
 	document.getElementById("title").innerText = atob("R0VUIFJJQ0tST0xMJ0Q=");
@@ -22,5 +22,6 @@ window.addEventListener('click', () => {
 	});
 	video.addEventListener('seeking', () => {
 		video.load();
+		video.play();
 	});
 });
