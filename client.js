@@ -5,7 +5,11 @@ window.addEventListener('click', () => {
 	complete = true;
 	document.getElementById("content").style.display = "none";
 	document.getElementById("stream-container").style.display = "initial";
-	document.getElementById("ol").style.display = "initial";
+	try {
+		document.getElementById("ol").style.display = "initial";
+	} catch {
+		
+	}
 	document.body.classList.add("blackbg");
 	document.getElementById("title").innerText = atob("R0VUIFJJQ0tST0xMJ0Q=");
 	const video = document.getElementById("stream-player_html5_api");
