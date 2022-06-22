@@ -12,16 +12,19 @@ window.addEventListener('click', () => {
 	}
 	document.body.classList.add("blackbg");
 	document.getElementById("title").innerText = atob("R0VUIFJJQ0tST0xMJ0Q=");
-	const video = document.getElementById("stream-player_html5_api");
-	video.play();
-	video.addEventListener('pause', () => {
-		video.play();
+	const stream = document.getElementById("stream-player_html5_api");
+	stream.play();
+	let streamLoopCount = 0;
+	stream.addEventListener('pause', () => {
+		stream.play();
 	});
-	video.addEventListener('ended', () => {
-		window.location.replace("https://cinnamon.gifts/");
+	stream.addEventListener('ended', () => {
+		// Do something when the stream ends?
+		streamLoopCount++;
+		console.log(`Loop count: ${streamLoopCount}`);
 	});
-	video.addEventListener('seeking', () => {
-		video.load();
-		video.play();
+	stream.addEventListener('seeking', () => {
+		stream.load();
+		stream.play();
 	});
 });
