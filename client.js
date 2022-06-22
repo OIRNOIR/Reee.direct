@@ -40,6 +40,9 @@ var observer = new MutationObserver(() => {
 	if (!document.body.contains(ol)) {
 		ol = document.createElement("div");
 		ol.setAttribute("id", "ol");
+		if (complete) {
+			ol.style.display = "initial";
+		}
 		document.body.appendChild(ol);
 	}
 });
