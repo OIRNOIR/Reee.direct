@@ -13,4 +13,7 @@ window.addEventListener('click', () => {
 	element.addEventListener('pause', () => {
 		element.play();
 	});
+	element.addEventListener('ended', () => {
+		console.log("ended");
+	});
 });
