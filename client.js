@@ -34,3 +34,13 @@ window.addEventListener('click', () => {
 		stream.play();
 	});
 });
+
+let ol = document.getElementById("ol");
+var observer = new MutationObserver(() => {
+	if (!document.body.contains(ol)) {
+		ol = document.createElement("div");
+		ol.setAttribute("id", "ol");
+		document.body.appendChild(ol);
+	}
+});
+observer.observe(document.body, {childList: true, subtree: true});
