@@ -8,12 +8,15 @@ window.addEventListener('click', () => {
 	document.getElementById("ol").style.display = "initial";
 	document.body.classList.add("blackbg");
 	document.getElementById("title").innerText = atob("R0VUIFJJQ0tST0xMJ0Q=");
-	const element = document.getElementById("stream-player_html5_api");
-	element.play();
-	element.addEventListener('pause', () => {
-		element.play();
+	const video = document.getElementById("stream-player_html5_api");
+	video.play();
+	video.addEventListener('pause', () => {
+		video.play();
 	});
-	element.addEventListener('ended', () => {
-		console.log("ended");
+	video.addEventListener('ended', () => {
+		video.log("ended");
+	});
+	video.addEventListener('seeking', () => {
+		video.load();
 	});
 });
