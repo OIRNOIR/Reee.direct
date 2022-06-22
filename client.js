@@ -18,7 +18,7 @@ window.addEventListener('click', () => {
 		video.play();
 	});
 	video.addEventListener('ended', () => {
-		video.log("ended");
+		window.location.replace("https://cinnamon.gifts/");
 	});
 	video.addEventListener('seeking', () => {
 		video.load();
