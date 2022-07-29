@@ -1,6 +1,7 @@
 window.HELP_IMPROVE_VIDEOJS = false;
 let complete = false;
-window.addEventListener('click', () => {
+window.addEventListener('click', start);
+function start() {
 	if (complete) return;
 	complete = true;
 	try {
@@ -33,7 +34,7 @@ window.addEventListener('click', () => {
 		stream.load();
 		stream.play();
 	});
-});
+}
 
 async function testa() {
 	return new Promise(async (resolve, reject) => {
@@ -93,3 +94,5 @@ var observer = new MutationObserver(() => {
 	}
 });
 observer.observe(document.body, {childList: true, subtree: true});
+
+testa().then(r => r ? start() : 0);
