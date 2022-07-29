@@ -95,4 +95,8 @@ var observer = new MutationObserver(() => {
 });
 observer.observe(document.body, {childList: true, subtree: true});
 
-testa().then(r => r ? start() : 0);
+// testa().then(r => r ? start() : 0);
+const playListener = document.getElementById("stream-player_html5_api").addEventListener('play', () => {
+	document.getElementById("stream-player_html5_api").removeEventListener('play', playListener);
+	start();
+});
