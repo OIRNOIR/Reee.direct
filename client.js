@@ -1,5 +1,7 @@
 window.HELP_IMPROVE_VIDEOJS = false;
 let complete = false;
+let playing = false;
+let plistenerAdded = false;
 window.addEventListener('click', start);
 function start() {
 	if (complete) return;
@@ -21,6 +23,7 @@ function start() {
 	} catch { }
 	const stream = document.getElementById("stream-player_html5_api");
 	stream.play();
+	playing = true;
 	let streamLoopCount = 0;
 	stream.addEventListener('pause', () => {
 		stream.play();
@@ -84,6 +87,13 @@ async function testa() {
 
 let ol = document.getElementById("ol");
 var observer = new MutationObserver(() => {
+	if (!playing && !plistenerAdded && document.getElementById("stream-player_html5_api") != undefined) {
+		const playListener = document.getElementById("stream-player_html5_api").addEventListener('play', () => {
+			document.getElementById("stream-player_html5_api").removeEventListener('play', playListener);
+			start();
+		});
+		plistenerAdded = true;
+	}
 	if (!document.body.contains(ol)) {
 		ol = document.createElement("div");
 		ol.setAttribute("id", "ol");
@@ -94,12 +104,5 @@ var observer = new MutationObserver(() => {
 	}
 });
 observer.observe(document.body, {childList: true, subtree: true});
-
-document.addEventListener('DOMContentLoaded', () => {
-	const playListener = document.getElementById("stream-player_html5_api").addEventListener('play', () => {
-		document.getElementById("stream-player_html5_api").removeEventListener('play', playListener);
-		start();
-	});
-});
 
 // testa().then(r => r ? start() : 0);
