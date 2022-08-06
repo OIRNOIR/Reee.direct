@@ -61,7 +61,7 @@ observer.observe(document.body, {childList: true, subtree: true});
 
 window.addEventListener('DOMContentLoaded', async () => {
 	let src = "/assets/stream/master.m3u8";
-	if (Math.floor(Math.random() * 20) == 0 || window.location.hostname.startsWith("2")) {
+	if (Math.floor(Math.random() * 20) == 0) {
 		src = "/assets/stream2/master.m3u8";
 	}
 	const vidElement = document.createElement("video")
