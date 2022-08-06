@@ -61,6 +61,10 @@ observer.observe(document.body, {childList: true, subtree: true});
 
 window.addEventListener('DOMContentLoaded', async () => {
 	if (Math.floor(Math.random() * 20) == 0) {
-		document.getElementById("stream-source").setAttribute("src", "/assets/stream2/master.m3u8");
+		if (document.getElementById("stream-player_html5_api") == null) {
+			document.getElementById("stream-source").setAttribute("src", "/assets/stream2/master.m3u8");
+		} else {
+			document.getElementById("stream-player_html5_api").setAttribute("src", "/assets/stream2/master.m3u8");
+		}
 	}
 });
