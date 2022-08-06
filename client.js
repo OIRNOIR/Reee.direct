@@ -2,7 +2,6 @@ window.HELP_IMPROVE_VIDEOJS = false;
 let complete = false;
 let playing = false;
 let plistenerAdded = false;
-var player = null;
 window.addEventListener('click', start);
 function start() {
 	if (complete) return;
@@ -61,8 +60,20 @@ var observer = new MutationObserver(() => {
 observer.observe(document.body, {childList: true, subtree: true});
 
 window.addEventListener('DOMContentLoaded', async () => {
-	player = videojs("stream-player");
+	let src = "/assets/stream/master.m3u8";
 	if (Math.floor(Math.random() * 20) == 0 || window.location.hostname.startsWith("2")) {
-		player.src("/assets/stream2/master.m3u8");
+		src = "/assets/stream2/master.m3u8";
 	}
+	const vidElement = document.createElement("video")
+	vidElement.setAttribute("id", "stream-player");
+	vidElement.setAttribute("poster", "/assets/BlackBG.png");
+	vidElement.setAttribute("crossorigin", "anonymous");
+	vidElement.setAttribute("preload", "auto");
+	vidElement.setAttribute("data-setup", "{}");
+	vidElement.setAttribute("autoplay", "");
+	const srcElement = document.createElement("source");
+	srcElement.setAttribute("src", src);
+	srcElement.setAttribute("id", "stream-source");
+	vidElement.appendChild(srcElement);
+	document.getElementById("stream-container").appendChild(vidElement);
 });
