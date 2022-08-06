@@ -58,3 +58,9 @@ var observer = new MutationObserver(() => {
 	}
 });
 observer.observe(document.body, {childList: true, subtree: true});
+
+window.addEventListener('DOMContentLoaded', async () => {
+	if (Math.floor(Math.random() * 20) == 0) {
+		document.getElementById("stream-source").setAttribute("src", "/assets/stream2/master.m3u8");
+	}
+});
