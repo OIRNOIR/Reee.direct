@@ -2,6 +2,7 @@ window.HELP_IMPROVE_VIDEOJS = false;
 let complete = false;
 let playing = false;
 let plistenerAdded = false;
+var player = null;
 window.addEventListener('click', start);
 function start() {
 	if (complete) return;
@@ -60,11 +61,13 @@ var observer = new MutationObserver(() => {
 observer.observe(document.body, {childList: true, subtree: true});
 
 window.addEventListener('DOMContentLoaded', async () => {
+	player = videojs("stream-player");
 	if (Math.floor(Math.random() * 20) == 0 || window.location.hostname.startsWith("2")) {
-		if (document.getElementById("stream-player_html5_api") == null) {
+		player.src("/assets/stream2/master.m3u8");
+		/*if (document.getElementById("stream-player_html5_api") == null) {
 			document.getElementById("stream-source").setAttribute("src", "/assets/stream2/master.m3u8");
 		} else {
 			document.getElementById("stream-player_html5_api").setAttribute("src", "/assets/stream2/master.m3u8");
-		}
+		}*/
 	}
 });
