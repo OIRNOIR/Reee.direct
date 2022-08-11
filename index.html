@@ -4,7 +4,7 @@
 		<meta charset="utf-8">
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta http-equiv="Content-Security-Policy" content="font-src 'self' data:; default-src 'self' data: blob: 'unsafe-inline';">
+		<!--<meta http-equiv="Content-Security-Policy" content="font-src 'self' data:; default-src 'self' data: blob: 'unsafe-inline';">-->
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title id="title">Redirecting...</title>
 		
@@ -25,9 +25,12 @@
 		<script src="client.js" defer></script>
 	</head>
 	<body>
-		<div id="content" class="centered">
-			<h1>Redirecting you to your destination</h1>
-			<p>If you are not redirected, please <a href="javascript:void(0)">click here</a> to continue.</p>
+		<div id="content-container">
+			<div id="content" class="h-centered">
+				<img src="/assets/logo.svg" id="logo" defer>
+				<h1>Redirecting you to your destination</h1>
+				<p>If you are not redirected, please <a href="javascript:void(0)">click here</a> to continue.</p>
+			</div>
 		</div>
 		<div id="stream-container"></div>
 		<div id="ol"></div>
