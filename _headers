@@ -1,2 +1,2 @@
 /*
-  Access-Control-Allow-Origin: https://*.shortlnkto.com
+  Access-Control-Allow-Origin: *
