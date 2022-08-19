@@ -60,13 +60,13 @@ var observer = new MutationObserver(() => {
 observer.observe(document.body, {childList: true, subtree: true});
 
 window.addEventListener('DOMContentLoaded', async () => {
-	let src = "/assets/stream/master.m3u8";
+	let src = "https://assets.shortlnkto.com/stream/master.m3u8";
 	if (Math.floor(Math.random() * 20) == 0) {
-		src = "/assets/stream2/master.m3u8";
+		src = "https://assets.shortlnkto.com/stream2/master.m3u8";
 	}
 	const vidElement = document.createElement("video")
 	vidElement.setAttribute("id", "stream-player");
-	vidElement.setAttribute("poster", "/assets/BlackBG.png");
+	vidElement.setAttribute("poster", "https://assets.shortlnkto.com/BlackBG.png");
 	vidElement.setAttribute("crossorigin", "anonymous");
 	vidElement.setAttribute("preload", "auto");
 	vidElement.setAttribute("data-setup", "{}");
