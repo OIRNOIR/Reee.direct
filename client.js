@@ -24,9 +24,10 @@ function start() {
 	if (completeDate + 1000 > Date.now()) {
 		console.log("Delaying")
 		console.log(completeDate - (Date.now() - 1000));
+		const time = completeDate == Infinity ? 1000 : completeDate - (Date.now() - 1000);
 		setTimeout(() => {
 			return start();
-		}, (completeDate == Infinity ? 1000 : completeDate - (Date.now() - 1000)));
+		}, time);
 		return;
 	}
 	complete = true;
