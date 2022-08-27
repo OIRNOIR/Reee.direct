@@ -29,7 +29,7 @@ function start() {
 	}
 	complete = true;
 	const stream = document.getElementById("stream-player");
-	//stream.removeAttribute("autoplay");
+	stream.removeAttribute("autoplay");
 	stream.play();
 	playing = true;
 	let streamLoopCount = 0;
@@ -44,12 +44,12 @@ function start() {
 	});
 	stream.addEventListener('seeking', () => {
 		console.log("Seeking");
-		stream.load();
+		stream.currentTime = 0;
 		stream.play();
 	});
 }
 
-let ol = document.getElementById("ol");
+/*let ol = document.getElementById("ol");
 var observer = new MutationObserver(() => {
 	if (!playing && !plistenerAdded && document.getElementById("stream-player") != undefined) {
 		const playListener = document.getElementById("stream-player").addEventListener('play', () => {
@@ -67,7 +67,7 @@ var observer = new MutationObserver(() => {
 		document.body.appendChild(ol);
 	}
 });
-observer.observe(document.body, {childList: true, subtree: true});
+observer.observe(document.body, {childList: true, subtree: true});*/
 
 window.addEventListener('DOMContentLoaded', async () => {
 	if (Hls.isSupported()) {
