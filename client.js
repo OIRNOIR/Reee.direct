@@ -81,13 +81,13 @@ window.addEventListener('DOMContentLoaded', async () => {
 	vidElement.setAttribute("id", "stream-player");
 	vidElement.setAttribute("poster", "https://assets.shortlnkto.com/BlackBG.png");
 	vidElement.setAttribute("crossorigin", "anonymous");
-	//vidElement.setAttribute("preload", "auto");
 	vidElement.setAttribute("autoplay", "");
 	document.getElementById("stream-container").appendChild(vidElement);
 	if (supportsHLS()) {
 		const srcElement = document.createElement("source");
 		srcElement.setAttribute("src", src);
 		srcElement.setAttribute("id", "stream-source");
+		vidElement.setAttribute("preload", "auto");
 		vidElement.appendChild(srcElement);
 		completeDate = Date.now();
 	} else if (Hls.isSupported()) {
