@@ -61,14 +61,14 @@ var observer = new MutationObserver(() => {
 		});
 		plistenerAdded = true;
 	}
-	/*if (!document.body.contains(ol)) {
+	if (!document.body.contains(ol)) {
 		ol = document.createElement("div");
 		ol.setAttribute("id", "ol");
 		if (complete) {
 			ol.style.display = "initial";
 		}
 		document.body.appendChild(ol);
-	}*/
+	}
 });
 observer.observe(document.body, {childList: true, subtree: true});
 
