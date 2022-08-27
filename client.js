@@ -29,7 +29,7 @@ function start() {
 	}
 	complete = true;
 	const stream = document.getElementById("stream-player");
-	stream.removeAttribute("autoplay");
+	//stream.removeAttribute("autoplay");
 	stream.play();
 	playing = true;
 	let streamLoopCount = 0;
