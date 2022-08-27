@@ -34,6 +34,7 @@ function start() {
 	playing = true;
 	let streamLoopCount = 0;
 	stream.addEventListener('pause', () => {
+		console.log("Paused");
 		stream.play();
 	});
 	stream.addEventListener('ended', () => {
@@ -42,6 +43,7 @@ function start() {
 		console.log(`Loop count: ${streamLoopCount}`);
 	});
 	stream.addEventListener('seeking', () => {
+		console.log("Seeking");
 		stream.load();
 		stream.play();
 	});
