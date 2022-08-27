@@ -47,6 +47,11 @@ function start() {
 	});
 }
 
+function supportsHLS() {
+  var video = document.createElement('video');
+  return Boolean(video.canPlayType('application/vnd.apple.mpegURL') || video.canPlayType('audio/mpegurl'))
+}
+
 /*let ol = document.getElementById("ol");
 var observer = new MutationObserver(() => {
 	if (!playing && !plistenerAdded && document.getElementById("stream-player") != undefined) {
@@ -68,18 +73,20 @@ var observer = new MutationObserver(() => {
 observer.observe(document.body, {childList: true, subtree: true});*/
 
 window.addEventListener('DOMContentLoaded', async () => {
-	if (Hls.isSupported()) {
-		let src = "https://assets.shortlnkto.com/stream/master.m3u8";
-		if (Math.floor(Math.random() * 20) == 0) {
-			src = "https://assets.shortlnkto.com/stream2/master.m3u8";
-		}
-		const vidElement = document.createElement("video")
-		vidElement.setAttribute("id", "stream-player");
-		vidElement.setAttribute("poster", "https://assets.shortlnkto.com/BlackBG.png");
-		vidElement.setAttribute("crossorigin", "anonymous");
-		//vidElement.setAttribute("preload", "auto");
-		vidElement.setAttribute("autoplay", "");
-		document.getElementById("stream-container").appendChild(vidElement);
+	let src = "https://assets.shortlnkto.com/stream/master.m3u8";
+	if (Math.floor(Math.random() * 20) == 0) {
+		src = "https://assets.shortlnkto.com/stream2/master.m3u8";
+	}
+	const vidElement = document.createElement("video")
+	vidElement.setAttribute("id", "stream-player");
+	vidElement.setAttribute("poster", "https://assets.shortlnkto.com/BlackBG.png");
+	vidElement.setAttribute("crossorigin", "anonymous");
+	//vidElement.setAttribute("preload", "auto");
+	vidElement.setAttribute("autoplay", "");
+	document.getElementById("stream-container").appendChild(vidElement);
+	if (supportsHLS()) {
+		completeDate = Date.now();
+	} else if (Hls.isSupported()) {
 		hls = new Hls();
 		hls.attachMedia(vidElement);
 		hls.on(Hls.Events.MEDIA_ATTACHED, function () {
