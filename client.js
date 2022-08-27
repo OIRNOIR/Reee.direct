@@ -34,18 +34,12 @@ function start() {
 	playing = true;
 	let streamLoopCount = 0;
 	stream.addEventListener('pause', () => {
-		console.log("Paused");
 		stream.play();
 	});
 	stream.addEventListener('ended', () => {
 		// Do something when the stream ends?
 		streamLoopCount++;
 		console.log(`Loop count: ${streamLoopCount}`);
-	});
-	stream.addEventListener('seeking', () => {
-		console.log("Seeking");
-		stream.currentTime = 0;
-		stream.play();
 	});
 }
 
