@@ -33,7 +33,7 @@ function start() {
 	complete = true;
 	console.log("Going!");
 	const stream = document.getElementById("stream-player");
-	//stream.removeAttribute("autoplay");
+	stream.removeAttribute("autoplay");
 	stream.play();
 	playing = true;
 	let streamLoopCount = 0;
@@ -77,7 +77,7 @@ window.addEventListener('DOMContentLoaded', async () => {
 		vidElement.setAttribute("id", "stream-player");
 		vidElement.setAttribute("poster", "https://assets.shortlnkto.com/BlackBG.png");
 		vidElement.setAttribute("crossorigin", "anonymous");
-		vidElement.setAttribute("preload", "auto");
+		//vidElement.setAttribute("preload", "auto");
 		vidElement.setAttribute("autoplay", "");
 		document.getElementById("stream-container").appendChild(vidElement);
 		hls = new Hls();
