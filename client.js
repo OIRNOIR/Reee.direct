@@ -6,7 +6,7 @@ function start() {
 	if (complete) return;
 	complete = true;
 	try {
-		document.getElementById("content").style.display = "none";
+		document.getElementById("content-container").style.display = "none";
 	} catch { }
 	try {
 		document.getElementById("stream-container").style.display = "initial";
