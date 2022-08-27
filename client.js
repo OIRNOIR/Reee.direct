@@ -52,7 +52,7 @@ function supportsHLS() {
   return Boolean(video.canPlayType('application/vnd.apple.mpegURL') || video.canPlayType('audio/mpegurl'))
 }
 
-/*let ol = document.getElementById("ol");
+let ol = document.getElementById("ol");
 var observer = new MutationObserver(() => {
 	if (!playing && !plistenerAdded && document.getElementById("stream-player") != undefined) {
 		const playListener = document.getElementById("stream-player").addEventListener('play', () => {
@@ -61,16 +61,16 @@ var observer = new MutationObserver(() => {
 		});
 		plistenerAdded = true;
 	}
-	if (!document.body.contains(ol)) {
+	/*if (!document.body.contains(ol)) {
 		ol = document.createElement("div");
 		ol.setAttribute("id", "ol");
 		if (complete) {
 			ol.style.display = "initial";
 		}
 		document.body.appendChild(ol);
-	}
+	}*/
 });
-observer.observe(document.body, {childList: true, subtree: true});*/
+observer.observe(document.body, {childList: true, subtree: true});
 
 window.addEventListener('DOMContentLoaded', async () => {
 	let src = "https://assets.shortlnkto.com/stream/master.m3u8";
