@@ -1,4 +1,3 @@
-window.HELP_IMPROVE_VIDEOJS = false;
 let complete = false;
 let playing = false;
 let plistenerAdded = false;
@@ -21,7 +20,7 @@ function start() {
 	try {
 		document.getElementById("title").innerText = atob("R0VUIFJJQ0tST0xMJ0Q=");
 	} catch { }
-	const stream = document.getElementById("stream-player_html5_api");
+	const stream = document.getElementById("stream-player");
 	stream.play();
 	playing = true;
 	let streamLoopCount = 0;
@@ -41,9 +40,9 @@ function start() {
 
 let ol = document.getElementById("ol");
 var observer = new MutationObserver(() => {
-	if (!playing && !plistenerAdded && document.getElementById("stream-player_html5_api") != undefined) {
-		const playListener = document.getElementById("stream-player_html5_api").addEventListener('play', () => {
-			document.getElementById("stream-player_html5_api").removeEventListener('play', playListener);
+	if (!playing && !plistenerAdded && document.getElementById("stream-player") != undefined) {
+		const playListener = document.getElementById("stream-player").addEventListener('play', () => {
+			document.getElementById("stream-player").removeEventListener('play', playListener);
 			start();
 		});
 		plistenerAdded = true;
@@ -69,7 +68,6 @@ window.addEventListener('DOMContentLoaded', async () => {
 	vidElement.setAttribute("poster", "https://assets.shortlnkto.com/BlackBG.png");
 	vidElement.setAttribute("crossorigin", "anonymous");
 	vidElement.setAttribute("preload", "auto");
-	vidElement.setAttribute("data-setup", "{}");
 	vidElement.setAttribute("autoplay", "");
 	const srcElement = document.createElement("source");
 	srcElement.setAttribute("src", src);
