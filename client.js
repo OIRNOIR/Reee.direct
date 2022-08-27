@@ -30,8 +30,9 @@ function start() {
 		return;
 	}
 	complete = true;
+	console.log("Going!");
 	const stream = document.getElementById("stream-player");
-	stream.removeAttribute("autoplay");
+	//stream.removeAttribute("autoplay");
 	stream.play();
 	playing = true;
 	let streamLoopCount = 0;
