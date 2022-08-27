@@ -22,16 +22,13 @@ function start() {
 		document.getElementById("title").innerText = atob("R0VUIFJJQ0tST0xMJ0Q=");
 	} catch { }
 	if (completeDate + 1000 > Date.now()) {
-		console.log("Delaying")
 		const time = completeDate == Infinity ? 1000 : completeDate - (Date.now() - 1000);
-		console.log(time);
 		setTimeout(() => {
 			return start();
 		}, time);
 		return;
 	}
 	complete = true;
-	console.log("Going!");
 	const stream = document.getElementById("stream-player");
 	stream.removeAttribute("autoplay");
 	stream.play();
