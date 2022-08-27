@@ -85,6 +85,10 @@ window.addEventListener('DOMContentLoaded', async () => {
 	vidElement.setAttribute("autoplay", "");
 	document.getElementById("stream-container").appendChild(vidElement);
 	if (supportsHLS()) {
+		const srcElement = document.createElement("source");
+		srcElement.setAttribute("src", src);
+		srcElement.setAttribute("id", "stream-source");
+		vidElement.appendChild(srcElement);
 		completeDate = Date.now();
 	} else if (Hls.isSupported()) {
 		hls = new Hls();
