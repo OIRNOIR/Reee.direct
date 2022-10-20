@@ -76,7 +76,7 @@ window.addEventListener('DOMContentLoaded', async () => {
 	}
 	const vidElement = document.createElement("video")
 	vidElement.setAttribute("id", "stream-player");
-	vidElement.setAttribute("poster", "https://assets.shortlnkto.com/BlackBG.png");
+	vidElement.setAttribute("poster", "https://assets.shortlnkto.com/blackbg.png");
 	vidElement.setAttribute("crossorigin", "anonymous");
 	vidElement.setAttribute("autoplay", "");
 	document.getElementById("stream-container").appendChild(vidElement);
