@@ -31,6 +31,7 @@ function start() {
 	complete = true;
 	const stream = document.getElementById("stream-player");
 	stream.removeAttribute("autoplay");
+	stream.currentTime = 0;
 	stream.play();
 	playing = true;
 	let streamLoopCount = 0;
@@ -41,6 +42,10 @@ function start() {
 		// Do something when the stream ends?
 		streamLoopCount++;
 		console.log(`Loop count: ${streamLoopCount}`);
+	});
+	stream.addEventListener('seeking', () => {
+		stream.currentTime = 0;
+		stream.play();
 	});
 }
 
