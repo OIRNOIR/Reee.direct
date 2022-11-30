@@ -46,7 +46,6 @@ function start() {
 	stream.addEventListener('seeking', () => {
 		if (stream.currentTime > 2) {
 			stream.currentTime = 0;
-			//stream.play();
 		}
 	});
 }
