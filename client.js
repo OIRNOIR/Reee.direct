@@ -43,7 +43,7 @@ function start() {
 		streamLoopCount++;
 		console.log(`Loop count: ${streamLoopCount}`);
 	});
-	stream.addEventListener('seeking', () => {
+	stream.addEventListener('seeked', () => {
 		stream.currentTime = 0;
 		stream.play();
 	});
