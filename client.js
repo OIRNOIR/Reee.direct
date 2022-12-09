@@ -44,9 +44,9 @@ function start() {
 		console.log(`Loop count: ${streamLoopCount}`);
 	});
 	stream.addEventListener('seeking', () => {
-		/*if (stream.currentTime > 0.5) {
+		if (stream.currentTime > 0.5) {
 			stream.currentTime = 0;
-		}*/
+		}
 	});
 }
 
