@@ -1,2 +1,2 @@
 /*
-  Content-Security-Policy: default-src 'self' https://reee.direct https://*.reee.direct; script-src 'self' https://reee.direct https://*.reee.direct https://cdn.jsdelivr.net/npm/hls.js@latest/dist/hls.min.js; media-src 'self' blob: https://reee.direct https://*.reee.direct;
+  Content-Security-Policy: default-src 'self' https://reee.direct https://*.reee.direct; script-src 'self' https://reee.direct https://*.reee.direct https://cdn.jsdelivr.net/npm/hls.js@latest/dist/hls.min.js; media-src 'self' blob: https://reee.direct https://*.reee.direct; worker-src 'self' blob: https://reee.direct https://*.reee.direct;
