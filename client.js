@@ -86,19 +86,19 @@ window.addEventListener('DOMContentLoaded', async () => {
 	vidElement.setAttribute("crossorigin", "anonymous");
 	vidElement.setAttribute("autoplay", "");
 	document.getElementById("stream-container").appendChild(vidElement);
-	if (supportsHLS()) {
+	/*if (supportsHLS()) {
 		const srcElement = document.createElement("source");
 		srcElement.setAttribute("src", src);
 		srcElement.setAttribute("id", "stream-source");
 		vidElement.setAttribute("preload", "auto");
 		vidElement.appendChild(srcElement);
 		completeDate = Date.now();
-	} else if (Hls.isSupported()) {
+	} else if (Hls.isSupported()) {*/
 		hls = new Hls();
 		hls.attachMedia(vidElement);
 		hls.on(Hls.Events.MEDIA_ATTACHED, function () {
       hls.loadSource(src);
 			completeDate = Date.now();
     });
-	}
+	//}
 });
