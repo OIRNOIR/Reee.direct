@@ -50,11 +50,6 @@ function start() {
 	});
 }
 
-function supportsHLS() {
-  var video = document.createElement('video');
-  return Boolean(video.canPlayType('application/vnd.apple.mpegURL') || video.canPlayType('audio/mpegurl'))
-}
-
 let ol = document.getElementById("ol");
 var observer = new MutationObserver(() => {
 	if (!playing && !plistenerAdded && document.getElementById("stream-player") != undefined) {
@@ -86,19 +81,10 @@ window.addEventListener('DOMContentLoaded', async () => {
 	vidElement.setAttribute("crossorigin", "anonymous");
 	vidElement.setAttribute("autoplay", "");
 	document.getElementById("stream-container").appendChild(vidElement);
-	/*if (supportsHLS()) {
-		const srcElement = document.createElement("source");
-		srcElement.setAttribute("src", src);
-		srcElement.setAttribute("id", "stream-source");
-		vidElement.setAttribute("preload", "auto");
-		vidElement.appendChild(srcElement);
+	hls = new Hls();
+	hls.attachMedia(vidElement);
+	hls.on(Hls.Events.MEDIA_ATTACHED, function () {
+		hls.loadSource(src);
 		completeDate = Date.now();
-	} else if (Hls.isSupported()) {*/
-		hls = new Hls();
-		hls.attachMedia(vidElement);
-		hls.on(Hls.Events.MEDIA_ATTACHED, function () {
-      hls.loadSource(src);
-			completeDate = Date.now();
-    });
-	//}
+	});
 });
