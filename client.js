@@ -7,7 +7,7 @@ window.addEventListener('click', start);
 function start() {
 	if (complete) return;
 	try {
-		document.getElementById("content-container").style.display = "none";
+		document.getElementById("content").style.display = "none";
 	} catch { }
 	try {
 		document.getElementById("stream-container").style.display = "initial";
